@@ -1,7 +1,7 @@
 /**
  * SYST 17796 Project Base code.
  * Students can modify and extend to implement their game.
- * Add your name as an author and the date!
+ * @author Snehdeep Kaur   June 13, 2024
  */
 package ca.sheridancollege.project;
 
@@ -19,6 +19,13 @@ public abstract class Card {
      *
      * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
      */
+    private int value;
+
+    public int getValue() {
+        return value;
+    }
+    
+    
     @Override
     public abstract String toString();
 

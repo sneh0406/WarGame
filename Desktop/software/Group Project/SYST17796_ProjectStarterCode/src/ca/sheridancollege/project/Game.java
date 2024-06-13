@@ -1,7 +1,7 @@
 /**
  * SYST 17796 Project Base code.
  * Students can modify and extend to implement their game.
- * Add your name as an author and the date!
+ * @author Snehdeep Kaur   June 13, 2024
  */
 package ca.sheridancollege.project;
 
@@ -18,12 +18,22 @@ public abstract class Game {
 
     private final String name;//the title of the game
     private ArrayList<Player> players;// the players of the game
+    private int numPlayers;//the number of players of the game
 
-    public Game(String name) {
+
+    public Game(String name, int numPlayers) {
         this.name = name;
+        this.numPlayers = numPlayers;
         players = new ArrayList();
     }
-
+    
+    /**
+     * @return the numPlayers
+     */
+    public int getNumPlayers() {
+        return numPlayers;
+    }
+    
     /**
      * @return the name
      */
