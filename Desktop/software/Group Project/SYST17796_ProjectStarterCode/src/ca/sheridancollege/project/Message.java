@@ -16,14 +16,9 @@ public class Message {
            */
           public void title() {
                     System.out.println();
-                    System.out.println("* * * * * * * * * * * * * * * * * * * *"
-                            + "\n*                                         *"
-                            + "\n*         *  *  *   ****   ***            *"
-                            + "\n*         *  *  *   *  *   *  *           *"
-                            + "\n*         *  *  *   ****   ***            *"
-                            + "\n*         *** ***   *  *   *  *           *"
-                            + "\n*                                         *"
-                            + "\n* * * * * * * * * * * * * * * * * * * * * *");
+                    System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * *"
+                            + "\n* W A R W A R W A R W A R W A R W A R W A R *"
+                            + "\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
           }
 
           /**

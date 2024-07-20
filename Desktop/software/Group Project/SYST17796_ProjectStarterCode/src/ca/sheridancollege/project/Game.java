@@ -7,7 +7,7 @@
  */
 package ca.sheridancollege.project;
 
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * The class that models your game. You should create a more specific child of this class and
@@ -16,59 +16,65 @@ import java.util.ArrayList;
  * @author dancye
  * @author Paul Bonenfant Jan 2020
  */
-public abstract class Game {
+public class Game {
 
-          private final String name;//the title of the game
-          private ArrayList<Player> players;// the players of the game
-          private int numPlayers;//the number of players of the game
+          private Deck deck;
 
-          public Game(String name) {
-                    this.name = name;
-                    players = new ArrayList();
+          public void StartGame() {
+                    Scanner input = new Scanner(System.in);
+                    Message message = new Message();
+
+                    // Declare variables
+                    String answer;
+                    String name;
+
+                    // Display the Title and Rules of the game to the player.
+                    message.title();
+                    message.howToPlay();
+
+                    // Prompt the player if they would like to play the game.
+                    System.out.println("Welcome to War! Would you like to play?");
+                    System.out.print("Yes (Y) or No (N): ");
+                    answer = input.nextLine();
+
+                    // if/else statement
+                    if (answer.equalsIgnoreCase("Y")) {
+                              System.out.print("\nEnter username: ");
+                              name = input.nextLine();
+                              // Create player object with name.
+                              Player player = new Player(name);
+                              System.out.println("Hello, player " + player.getName() + "!");
+                              gameSystem();
+                    } else {
+                              System.out.println("\nPlay with us when you're ready! BYE!");
+                    }
+
           }
 
-          /**
-           * @return the name
-           */
-          public String getName() {
-                    return name;
+          public void gameSystem() {
+                    // Create a deck of cards for Player\
+                    deck = new Deck();
+                    deck.createDeck();
+                    List<Card> p1Deck = new ArrayList<Card>();
+                    List<Card> p2Deck = new ArrayList<Card>();
+                    p1Deck.addAll(deck.splitDeck(1));
+                    p2Deck.addAll(deck.splitDeck(2));
+
+                    // Let the player know that they have been handed their deck.
+                    System.out.println("\nPlayer has been assigned deck.");
+                    System.out.println("CPU has been assigned deck.");
+                    System.out.println();
+
+                    // While both players are not empty handed, play the game.
+                    while (!p1Deck.isEmpty() && !p2Deck.isEmpty()) {
+                              Card p1CardFaceUp = p1Deck.remove(0);
+                              Card p2CardFaceUp = p2Deck.remove(0);
+
+                              System.out.println("Player One: " + p1CardFaceUp);
+                              System.out.println("Player Two: " + p2CardFaceUp);
+                              System.out.println();
+
+                    }
           }
-
-          public Game(String name, int numPlayers) {
-                    this.name = name;
-                    this.numPlayers = numPlayers;
-                    players = new ArrayList();
-          }
-
-          /**
-           * @return the numPlayers
-           */
-          public int getNumPlayers() {
-                    return numPlayers;
-          }
-
-          /**
-           * @return the players of this game
-           */
-          public ArrayList<Player> getPlayers() {
-                    return players;
-          }
-
-          /**
-           * @param players the players of this game
-           */
-          public void setPlayers(ArrayList<Player> players) {
-                    this.players = players;
-          }
-
-          /**
-           * Play the game. This might be one method or many method calls depending on your game.
-           */
-          public abstract void play();
-
-          /**
-           * When the game is over, use this method to declare and display a winning player.
-           */
-          public abstract void declareWinner();
 
 } // End of Class
