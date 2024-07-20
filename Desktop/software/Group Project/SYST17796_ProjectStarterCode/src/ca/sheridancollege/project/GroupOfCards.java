@@ -3,7 +3,7 @@
  * Students can modify and extend to implement their game.
  * Add your name as an author and the date!
  *
- * @author Patricia Gariando June 2024
+ * @author Patricia Gariando July 19, 2024
  */
 package ca.sheridancollege.project;
 
@@ -20,9 +20,8 @@ import java.util.Collections;
  */
 public class GroupOfCards {
 
-          //The group of cards, stored in an ArrayList
-          private ArrayList<Card> cards;
-          private int size;//the size of the grouping
+          private ArrayList<Card> cards;     //The group of cards, stored in an ArrayList
+          private int size;                                 //the size of the grouping
 
           public GroupOfCards(int size) {
                     this.size = size;
@@ -37,6 +36,9 @@ public class GroupOfCards {
                     return cards;
           }
 
+          /**
+           * shuffle is a part of the Collections framework
+           */
           public void shuffle() {
                     Collections.shuffle(cards);
           }
@@ -55,4 +57,4 @@ public class GroupOfCards {
                     this.size = size;
           }
 
-}//end class
+} //End of Class

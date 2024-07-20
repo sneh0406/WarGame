@@ -7,6 +7,8 @@
  */
 package ca.sheridancollege.project;
 
+import java.util.Scanner;
+
 /**
  * A class that models each Player in the game. Players have an identifier, which should be unique.
  *
@@ -42,10 +44,23 @@ public abstract class Player {
                     this.name = name;
           }
 
-          /**
-           * The method to be overridden when you subclass the Player class with your specific type
-           * of Player and filled in with logic to play your game.
-           */
-          public abstract void play();
+          // any class that inherits from Player will have the option to start game.
+          public void startGame() {
+                    // Create a deck of cards for Player
+                    Deck playerOne = new Deck();
+                    Deck playerTwo = new Deck();
+                    playerOne.splitDeck(1);
+                    playerTwo.splitDeck(2);
+
+                    // Let the player know that they have been handed their deck.
+                    System.out.println("\nPlayer has been assigned deck.");
+                    System.out.println("CPU has been assigned deck.");
+
+                    //System.out.println(playerOne.getCards());
+                    // While both players are not empty handed, play the game.
+                    while (!playerOne.getCards().isEmpty() && !playerTwo.getCards().isEmpty()) {
+
+                    }
+          }
 
 }
