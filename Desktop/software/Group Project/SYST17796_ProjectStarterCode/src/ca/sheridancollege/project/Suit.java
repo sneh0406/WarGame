@@ -9,5 +9,5 @@ package ca.sheridancollege.project;
  * @author sneh July 19,2024
  */
 public enum Suit {
-          HEARTS, DIAMONDS, CLUBS, SPADES
+     HEARTS, DIAMONDS, CLUBS, SPADES
 }

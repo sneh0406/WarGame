@@ -18,48 +18,48 @@ import java.util.List;
  */
 public class Deck {
 
-          // List to hold all the playing cards in the deck
-          private List<Card> cards;
+     // List to hold all the playing cards in the deck
+     private List<Card> cards;
 
-          //Constructor to initialize the deck with all 52 playing cards and shuffle the deck.
-          public Deck() {
-                    createDeck();
-          }
+     //Constructor to initialize the deck with all 52 playing cards and shuffle the deck.
+     public Deck() {
+          createDeck();
+     }
 
-          public void createDeck() {
-                    cards = new ArrayList<>();
-                    for (Suit suit : Suit.values()) {
-                              for (Rank rank : Rank.values()) {
-                                        cards.add(new Card(suit, rank));
-                              }
-                    }
-                    shuffle();
+     public void createDeck() {
+          cards = new ArrayList<>();
+          for (Suit suit : Suit.values()) {
+               for (Rank rank : Rank.values()) {
+                    cards.add(new Card(suit, rank));
+               }
           }
+          shuffle();
+     }
 
-          //Shuffles the deck using Collections.shuffle
-          public void shuffle() {
-                    Collections.shuffle(cards);
-          }
+     //Shuffles the deck using Collections.shuffle
+     public void shuffle() {
+          Collections.shuffle(cards);
+     }
 
-          //Getter method to retrieve the list of cards in the deck.
-          public List<Card> getCards() {
-                    return cards;
-          }
+     //Getter method to retrieve the list of cards in the deck.
+     public List<Card> getCards() {
+          return cards;
+     }
 
-          /**
-           *
-           * @param num the number that will determine which half of the deck the player is assigned
-           * @return half of the deck
-           */
-          public List<Card> splitDeck(int num) {
-                    List<Card> deck;
-                    // split
-                    if (num == 1) {
-                              deck = cards.subList(0, 26);
-                    } else {
-                              deck = cards.subList(27, 52);
-                    }
-                    return deck;
+     /**
+      *
+      * @param num the number that will determine which half of the deck the player is assigned
+      * @return half of the deck
+      */
+     public List<Card> splitDeck(int num) {
+          List<Card> deck;
+          // split
+          if (num == 1) {
+               deck = cards.subList(0, 26);
+          } else {
+               deck = cards.subList(26, 52);
           }
+          return deck;
+     }
 
 }

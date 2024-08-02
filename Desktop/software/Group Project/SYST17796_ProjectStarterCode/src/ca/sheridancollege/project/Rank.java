@@ -10,19 +10,19 @@ package ca.sheridancollege.project;
  * @author sneh July 19, 2024
  */
 public enum Rank {
-          TWO(2), THREE(3), FOUR(4), FIVE(5), SIX(6), SEVEN(7),
-          EIGHT(8), NINE(9), TEN(10), JACK(11), QUEEN(12), KING(13), ACE(14);
+     TWO(2), THREE(3), FOUR(4), FIVE(5), SIX(6), SEVEN(7),
+     EIGHT(8), NINE(9), TEN(10), JACK(11), QUEEN(12), KING(13), ACE(14);
 
-          // Value associated with each rank, used for comparison
-          private int value;
+     // Value associated with each rank, used for comparison
+     private int value;
 
-          //Constructor to set the value for each rank
-          Rank(int value) {
-                    this.value = value;
-          }
+     //Constructor to set the value for each rank
+     Rank(int value) {
+          this.value = value;
+     }
 
-          // Getter method to retrieve the value of the rank
-          public int getValue() {
-                    return value;
-          }
+     // Getter method to retrieve the value of the rank
+     public int getValue() {
+          return value;
+     }
 }
