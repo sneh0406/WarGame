@@ -23,43 +23,34 @@ public class Deck {
 
      //Constructor to initialize the deck with all 52 playing cards and shuffle the deck.
      public Deck() {
-          createDeck();
-     }
+          this.cards = new ArrayList<>();
+        createDeck();
+        shuffle();
+    }
 
-     public void createDeck() {
-          cards = new ArrayList<>();
-          for (Suit suit : Suit.values()) {
-               for (Rank rank : Rank.values()) {
-                    cards.add(new Card(suit, rank));
-               }
-          }
-          shuffle();
-     }
+    void createDeck() {
+        for (Suit suit : Suit.values()) {
+            for (Rank rank : Rank.values()) {
+                cards.add(new Card(suit, rank));
+            }
+        }
+    }
 
-     //Shuffles the deck using Collections.shuffle
-     public void shuffle() {
-          Collections.shuffle(cards);
-     }
+    public void shuffle() {
+        Collections.shuffle(cards);
+    }
 
-     //Getter method to retrieve the list of cards in the deck.
-     public List<Card> getCards() {
-          return cards;
-     }
+    public List<Card> getCards() {
+        return new ArrayList<>(cards); // Return a copy to preserve encapsulation
+    }
 
-     /**
-      *
-      * @param num the number that will determine which half of the deck the player is assigned
-      * @return half of the deck
-      */
-     public List<Card> splitDeck(int num) {
-          List<Card> deck;
-          // split
-          if (num == 1) {
-               deck = cards.subList(0, 26);
-          } else {
-               deck = cards.subList(26, 52);
-          }
-          return deck;
+    public List<Card> splitDeck(int num) {
+        int halfSize = cards.size() / 2;
+        if (num == 1) {
+            return new ArrayList<>(cards.subList(0, halfSize));
+        } else {
+            return new ArrayList<>(cards.subList(halfSize, cards.size()));
+        }
+    }
      }
-
-}
+    
