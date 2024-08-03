@@ -12,6 +12,7 @@ import java.util.List;
  * The Deck class represents a standard deck of 52 playing cards. It includes methods to shuffle the
  * deck, retrieve the cards, and split the deck into two halves.
  *
+ * @autho Sheliey
  * @author sneh
  * @date July 19, 2024
  * @author Patricia Gariando July 19, 2024
