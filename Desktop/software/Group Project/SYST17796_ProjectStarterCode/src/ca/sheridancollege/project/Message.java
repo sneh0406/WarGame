@@ -9,6 +9,13 @@ package ca.sheridancollege.project;
  * @author sheli
  * @author Patricia Gariando <gariandp@sheridancollege.ca> July 19, 2024
  */
+
+ /**
+  * this class follows single responsibility principle as all the methods in this 
+  * class are related to showing message to user 
+  * Moreover, all method are related to view part of MVC design pattern 
+  * @author sim20
+  */
 public class Message {
 
      /**

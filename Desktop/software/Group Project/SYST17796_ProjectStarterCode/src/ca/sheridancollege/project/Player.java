@@ -13,6 +13,10 @@ package ca.sheridancollege.project;
  * @author dancye
  * @author Paul Bonenfant Jan 2020
  */
+/**
+ * this class follows single responsibility principle which gives high cohesion
+ * @author sim20
+ */
 public class Player {
 
      private String name; //the unique name for this players

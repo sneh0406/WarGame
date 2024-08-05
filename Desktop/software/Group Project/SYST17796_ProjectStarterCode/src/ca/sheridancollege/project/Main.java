@@ -7,6 +7,13 @@ package ca.sheridancollege.project;
 /**
  *
  * @author Patricia Gariando <gariandp@sheridancollege.ca> July 19, 2024
+ * 
+ */
+/**
+ * this class followed single Responsibility Principle (SRP)
+ * as main method only responsible for creating the object of game class and starting the game
+ * 
+ * @author sim20
  */
 public class Main {
 

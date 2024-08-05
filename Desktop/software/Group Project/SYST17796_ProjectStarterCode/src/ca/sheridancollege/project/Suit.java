@@ -8,6 +8,12 @@ package ca.sheridancollege.project;
  * @Enum representing the four suits in a standard deck of cards.
  * @author sneh July 19,2024
  */
+
+/**
+ * Follows open closed and singleton design pattern as enum has fixed set of instances
+ * 
+ * @author sim20
+ */
 public enum Suit {
      HEARTS, DIAMONDS, CLUBS, SPADES
 }

@@ -17,6 +17,14 @@ import java.util.List;
  *
  * @author dancye
  */
+/**
+ * this class is following single Responsibility principle as if method 
+ * are responsible for functions that are related to playing cards
+ * 
+ * 
+ * this class is also open for extension, so it implement open closed principle as well
+ * @author sim20
+ */
 public class Card implements Comparable<Card> {
 
      // List to hold all the playing cards in the deck
