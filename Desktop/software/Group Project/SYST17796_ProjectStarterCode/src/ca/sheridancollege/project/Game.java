@@ -68,7 +68,6 @@ public class Game {
           System.out.println(playerTwo.getName() + " has been assigned deck, cards in hand: " + p2Deck.size());
           System.out.println();
 
-          String playAgain;
           // While both players are not empty handed, play the game.
           while (!p1Deck.isEmpty() && !p2Deck.isEmpty()) {
                Card p1CardFaceUp = p1Deck.remove(0);
@@ -96,17 +95,13 @@ public class Game {
                          if (p1Deck.size() < 4 || p2Deck.size() < 4) {
                               if (p1Deck.size() < 4) {
                                    System.out.println(playerOne.getName() + " does not have enough cards for war. Game over.");
+                                   message.displayLoseMessage();
                               } else {
                                    System.out.println(playerTwo.getName() + " does not have enough cards for war. Game over.");
+                                   message.displayWinMessage();
                               }
-                              System.out.println("Would you like to play again? Yes (Y) or No (N): ");
-                              playAgain = input.nextLine();
-                              if (playAgain.equalsIgnoreCase("Yes") || playAgain.equalsIgnoreCase("Y")) {
-                                   StartGame();
-                              } else {
-                                   System.out.println();
-                                   message.goodbyeMessage();
-                              }
+                              // Prompt user if they would like to play again.
+                              playAgain();
                          }
 
                          for (int i = 0; i < 4; i++) {
@@ -135,11 +130,21 @@ public class Game {
           }
 
           if (p1Deck.isEmpty()) {
-               System.out.println(playerOne.getName() + " is out of cards. " + playerTwo.getName() + " wins the game!");
+               System.out.println(playerOne.getName() + " is out of cards. ");
+               message.displayLoseMessage();
           } else if (p2Deck.isEmpty()) {
-               System.out.println(playerTwo.getName() + " is out of cards. " + playerOne.getName() + " wins the game!");
+               System.out.println(playerTwo.getName() + " is out of cards. ");
+               message.displayWinMessage();
           }
+          playAgain();
+     }
 
+     /**
+      * Don't Repeat Yourself (DRY) Principle: Clone removed from lines 102-109 and 143-150. Created
+      * a playAgain() method that can be called.
+      */
+     public void playAgain() {
+          String playAgain;
           System.out.println("Would you like to play again? Yes (Y) or No (N): ");
           playAgain = input.nextLine();
           if (playAgain.equalsIgnoreCase("Yes") || playAgain.equalsIgnoreCase("Y")) {
@@ -149,5 +154,4 @@ public class Game {
                message.goodbyeMessage();
           }
      }
-
 }
