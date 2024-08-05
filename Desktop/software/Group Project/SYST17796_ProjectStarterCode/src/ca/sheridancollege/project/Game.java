@@ -10,8 +10,7 @@ package ca.sheridancollege.project;
 import java.util.*;
 
 /**
- * The class that models your game. You should create a more specific child of this class and
- * instantiate the methods given.
+ * The class that models the game.
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020

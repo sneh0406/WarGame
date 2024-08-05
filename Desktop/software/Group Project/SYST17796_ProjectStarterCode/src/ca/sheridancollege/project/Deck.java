@@ -9,6 +9,9 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * Single Responsibility Principle (SRP): The Deck class adheres to SRP by focusing on managing a
+ * deck of cards and their functions like shuffling and splitting a deck in half.
+ *
  * The Deck class represents a standard deck of 52 playing cards. It includes methods to shuffle the
  * deck, retrieve the cards, and split the deck into two halves.
  *
@@ -18,14 +21,20 @@ import java.util.List;
  */
 public class Deck {
 
-     // List to hold all the playing cards in the deck
+     // List to hold all the playing cards in the deck.
      private List<Card> cards;
 
-     //Constructor to initialize the deck with all 52 playing cards and shuffle the deck.
+     // Constructor to initialize the deck with all 52 playing cards and shuffle the deck.
      public Deck() {
           createDeck();
      }
+     // Getter method to retrieve the list of cards in the deck.
 
+     public List<Card> getCards() {
+          return cards;
+     }
+
+     // Create a deck of 52 cards.
      public void createDeck() {
           cards = new ArrayList<>();
           for (Suit suit : Suit.values()) {
@@ -36,14 +45,9 @@ public class Deck {
           shuffle();
      }
 
-     //Shuffles the deck using Collections.shuffle
+     // Shuffles the deck using Collections.shuffle.
      public void shuffle() {
           Collections.shuffle(cards);
-     }
-
-     //Getter method to retrieve the list of cards in the deck.
-     public List<Card> getCards() {
-          return cards;
      }
 
      /**

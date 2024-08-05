@@ -5,6 +5,9 @@
 package ca.sheridancollege.project;
 
 /**
+ * Model-Controller-View (MVC) Pattern & Single Responsibility Principle (SRP): the Message class
+ * adheres to the View part of MVC and SRP. It is a class that contains only methods that display
+ * outputs to notify/greet the user.
  *
  * @author sheli
  * @author Patricia Gariando <gariandp@sheridancollege.ca> July 19, 2024
@@ -60,7 +63,7 @@ public class Message {
      }
 
      /**
-      * Displays a goodbye message when the user chooses to not play again
+      * Displays a goodbye message when the user chooses to not play again.
       */
      public void goodbyeMessage() {
           System.out.println("Thank you for playing WAR! Bye!");

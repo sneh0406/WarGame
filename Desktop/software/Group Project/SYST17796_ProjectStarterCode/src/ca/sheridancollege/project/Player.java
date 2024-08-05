@@ -2,16 +2,19 @@
  * SYST 17796 Project Base code.
  * Students can modify and extend to implement their game.
  * Add your name as an author and the date!
- *
- * @author Patricia Gariando June 2024
  */
 package ca.sheridancollege.project;
 
 /**
- * A class that models each Player in the game. Players have an identifier, which should be unique.
+ * Single Responsibility Principle (SRP): the Player class exclusively focuses on managing the
+ * player's name. The variable is encapsulated and is only accessible through getter and setter
+ * methods.
+ *
+ * A class manages Player name. Players have an identifier, which should be unique.
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
+ * @author Patricia Gariando June 2024
  */
 public class Player {
 

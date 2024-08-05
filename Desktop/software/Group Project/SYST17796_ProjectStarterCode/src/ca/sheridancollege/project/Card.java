@@ -19,11 +19,11 @@ import java.util.List;
  */
 public class Card implements Comparable<Card> {
 
-     // List to hold all the playing cards in the deck
+     // List to hold all the playing cards in the deck.
      private List<Card> cards;
      private int value;
 
-     //Constructor to create a PlayingCard with a specific suit and rank
+     // Constructor to create a PlayingCard with a specific suit and rank.
      final private Suit suit;
      final private Rank rank;
 
@@ -33,33 +33,35 @@ public class Card implements Comparable<Card> {
           setValue(rank.getValue());      // Set the card's value based on its rank
      }
 
-     //Getter method for the suit of the card
+     // Getter method for the suit of a card.
      public Suit getSuit() {
           return suit;
      }
 
-     //Getter method for the rank of the card
+     // Getter method for the rank of a card.
      public Rank getRank() {
           return rank;
      }
 
+     // Setter method for the suit of a card.
      public void setValue(int value) {
           this.value = value;
      }
 
+     // Getter method for the value of a card.
      public int getValue() {
           return value;
      }
 
      @Override
      public int compareTo(Card other) {
-          // Compare ranks using their ordinal values
+          // Compare ranks using their ordinal values.
           return this.rank.ordinal() - other.rank.ordinal();
      }
 
      @Override
      public String toString() {
-          // Provide a string representation for the card, e.g., "ACE of Spades"
+          // Provide a string representation for the card, e.g., "ACE of Spades".
           return rank + " of " + suit;
      }
 
